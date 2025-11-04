@@ -60,3 +60,15 @@ export const moveCard = async (req: Request, res: Response) => {
 
   res.json(card)
 }
+
+
+export const getCardsByBoard = async (req: Request, res: Response) => {
+  const { boardId } = req.params
+
+  try {
+    const cards = await Card.find({ boardId }).sort({ order: 1 })
+    res.json(cards)
+  } catch (err) {
+    res.status(500).json({ message: "Failed to fetch cards" })
+  }
+}
