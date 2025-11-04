@@ -9,10 +9,10 @@ import {
 
 const router = Router()
 
+router.get("/:boardId", getCardsByBoard)
 router.post("/", createCard)
 router.patch("/:id", updateCard)
-router.delete("/:id", deleteCard)
 router.patch("/:id/move", moveCard)
-router.get("/:boardId", getCardsByBoard)
+router.delete("/:id", deleteCard)
 
 export default router
