@@ -1,13 +1,13 @@
 import { Schema, model } from "mongoose"
 
 export interface IBoard {
-  title: string
+  name: string
   columns: string[]
 }
 
 const boardSchema = new Schema<IBoard>(
   {
-    title: { type: String, required: true },
+    name: { type: String, required: true },
     columns: {
       type: [String],
       default: ["todo", "in-progress", "done"]

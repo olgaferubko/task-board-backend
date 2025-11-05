@@ -3,9 +3,9 @@ import { Board } from "../models/Board"
 import { Card } from "../models/Card"
 
 export const createBoard = async (req: Request, res: Response) => {
-  const { title } = req.body
+  const { name } = req.body
 
-  const board = await Board.create({ title })
+  const board = await Board.create({ name })
   res.status(201).json(board)
 }
 
